@@ -2,33 +2,23 @@
 
 ## Project overview
 
-This project analyzes whether major financial asset classes exhibit different return patterns across business cycle phases identified using the OECD Composite Leading Indicator (CLI) for the United States. The core idea is that the business cycle matters for asset allocation because macroeconomic conditions influence expected earnings, discount rates, inflation expectations, monetary policy, credit conditions, and investor risk appetite. If assets systematically perform differently across macroeconomic regimes, then business cycle indicators may provide useful inputs for tactical asset allocation.
+This project examines whether major asset classes behave differently across business cycle phases identified using the OECD Composite Leading Indicator (CLI) for the United States. The main idea is that macroeconomic conditions shape earnings expectations, interest rates, inflation dynamics, risk appetite, and therefore cross-asset performance. If assets systematically perform differently across macro regimes, business cycle indicators may provide useful signals for tactical asset allocation.
 
-The project builds a four-phase classification framework based on the level and slope of the OECD CLI and then evaluates the performance of several asset classes across those phases using daily financial data aligned to a realistic release-timing rule.
-
----
+The analysis builds a four-phase framework based on the level of the OECD CLI relative to 100 and its month-over-month slope, and then evaluates the performance of several asset classes using daily financial data aligned to a realistic release-timing rule.
 
 ## Motivation
 
-Business cycles are recurrent fluctuations in aggregate economic activity around trend. In practical terms, they reflect alternating periods of strengthening and weakening growth dynamics. These fluctuations affect corporate revenues, margins, financing conditions, interest rates, commodity demand, inflation expectations, and cross-asset relative performance. For this reason, business cycle analysis has long been relevant not only in macroeconomics but also in portfolio construction and tactical asset allocation.
+Business cycles reflect recurring fluctuations in economic activity around trend. These fluctuations matter for asset allocation because they influence growth expectations, monetary policy, financial conditions, and the relative attractiveness of risky versus defensive assets. A large part of the asset allocation literature therefore suggests that equities, real estate, bonds, gold, and commodities may perform differently depending on the phase of the cycle.
 
-A large part of the asset allocation literature starts from the premise that risky assets tend to perform better when growth is improving or above trend, while defensive assets tend to be relatively stronger when the economy weakens. This intuition motivates the use of regime-based frameworks in which asset allocation decisions are conditioned on macroeconomic states rather than based on static long-run averages alone.
-
-In that context, leading indicators are especially relevant because financial markets are forward-looking. Investors do not react only to the current state of the economy, but also to inflection points and changes in direction. Composite leading indicators are designed precisely to capture such shifts early.
-
----
+Leading indicators are especially relevant in this context because financial markets are forward-looking. Investors respond not only to current economic conditions, but also to shifts in momentum and turning points. This makes the OECD Composite Leading Indicator a useful candidate for testing a regime-based asset allocation framework.
 
 ## Related literature and conceptual background
 
-The project is motivated by two broad strands of literature.
+The project is motivated by two main strands of literature. First, the business cycle literature shows that macroeconomic fluctuations are economically meaningful and relevant for financial markets. Second, the leading indicator literature argues that composite indicators can help identify cyclical turning points before they become fully visible in coincident data.
 
-First, the business cycle literature emphasizes that fluctuations in economic activity are systematic, economically meaningful, and relevant for financial markets. Business cycle turning points influence the relative attractiveness of equities, bonds, commodities, real estate, and defensive assets. A regime-based approach to asset allocation therefore has a strong theoretical basis.
+In this context, the OECD CLI is used as a transparent and economically interpretable signal of the business cycle. The project is also related to practitioner-style regime allocation research, including OECD CLI-based and growth-sensitive asset allocation frameworks discussed in applied market research, such as Invesco’s work on business cycle investing.
 
-Second, the leading indicator literature argues that composite indicators may provide useful information about cyclical turning points before they are visible in coincident macroeconomic data. In particular, the OECD Composite Leading Indicator is designed to signal turning points in economic activity relative to trend. The project is also conceptually related to practical market research that uses leading indicators, including OECD CLI-based frameworks, to motivate tactical asset allocation or regime-aware portfolio tilts. This includes applied investment commentary and research such as work by Invesco on business cycle allocation and broader discussions of asset behavior across macro regimes, as well as academic and practitioner work associated with regime frameworks in the spirit of growth and cycle-sensitive allocation approaches.
-
-The main purpose here is not to replicate a single published paper exactly, but to test a transparent and economically interpretable framework: whether a simple phase-classification rule based on the OECD CLI level and its monthly change produces meaningful differences in cross-asset performance.
-
----
+The purpose of the project is not to replicate a single paper, but to test whether a simple phase-classification rule based on the OECD CLI level and slope produces meaningful differences in cross-asset performance.
 
 ## Research objective
 
@@ -67,22 +57,16 @@ The macroeconomic regime signal is based on the OECD Composite Leading Indicator
 
 **Series name:**  
 Leading Indicators OECD: Leading Indicators: Composite Leading Indicator: Amplitude Adjusted for United States
-
 **Series code:**  
 USALOLITOAASTSAM
-
 **Reference area:**  
 United States
-
 **Frequency:**  
 Monthly
-
 **Measure:**  
 Composite Leading Indicator (CLI)
-
 **Calculation methodology:**  
 OECD harmonised
-
 **Unit of measure:**  
 Index, amplitude adjusted
 
@@ -93,8 +77,6 @@ The OECD CLI is an amplitude-adjusted, harmonized leading indicator designed to 
 The project uses the latest available revised version of the series rather than real-time vintage data. This is an important limitation because the OECD revises the series retrospectively. Therefore, the results should be interpreted as an ex post regime-performance analysis rather than a strict real-time out-of-sample backtest.
 
 ### 2. OECD CLI component series for the United States
-
-The US CLI is a country-specific composite indicator constructed from several leading variables selected by the OECD for their ability to anticipate turning points in US economic activity.
 
 | Component series | Source |
 |---|---|
@@ -109,10 +91,9 @@ The US CLI is a country-specific composite indicator constructed from several le
 These components capture different dimensions of cyclical dynamics: consumer confidence, manufacturing sentiment, housing activity, industrial demand, equity market conditions, labor input intensity, and the slope of interest rates. Taken together, they provide a broad leading signal for business cycle turning points.
 
 ---
-
 ## Financial asset data
 
-The project uses daily financial data for the following asset classes:
+The project uses daily financial data for the following asset classes, collected from stockanalysis.com:
 
 - SPY: US equities
 - AGG: US bonds
@@ -278,11 +259,12 @@ Although the analysis is not based on real-time vintage data and should therefor
 
 ## Repository contents
 
-- `README.md` – project description and methodology
-- notebook / script files used for the analysis
-- processed OECD CLI phase dataset
-- financial asset dataset
-- figures generated in the analysis
+- `README.md` – project overview, methodology, data description, and main findings
+- `CLIstudy.ipynb` – full Google Colab / Jupyter notebook containing the complete code, outputs, tables, and figures
+- `CLIstudy.html` – static HTML version of the project, ready for direct viewing without running the code
+- `FinancialAssets.xlsx` – daily adjusted closing prices for the financial assets used in the analysis (DBC, SPY, GLD, AGG, VNQ), collected from stockanalysis.com
+- `CLI.xlsx` – monthly OECD CLI dataset used to construct the business cycle phases
+- processed datasets containing the phase classifications and aggregated phase-level asset returns
 
 ---
 
@@ -292,12 +274,5 @@ To reproduce the analysis:
 
 1. import the processed OECD CLI phase dataset,
 2. import the daily asset price dataset,
-3. construct the CLI phase intervals using the 15th-of-next-month release proxy,
-4. compute holding-period returns for each asset over each active phase interval,
-5. group the results by phase and compare mean returns across regimes.
+3. run the code.
 
----
-
-## Author note
-
-This project is intended as an applied macro-financial regime analysis rather than a fully optimized trading strategy. Its main contribution is to test whether a transparent and intuitive OECD CLI phase framework produces economically meaningful differences in cross-asset behavior.
