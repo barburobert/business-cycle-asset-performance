@@ -1,5 +1,17 @@
 # OECD CLI Business Cycle Phases and Cross-Asset Performance
+### Author: Robert-Florian Barbu
 
+## Conclusion
+
+This project shows that a simple phase-classification framework based on the OECD Composite Leading Indicator for the United States can generate economically interpretable differences in cross-asset performance.
+
+The results are broadly consistent with the literature and market intuition:
+- cyclical assets such as equities, real estate, and commodities tend to perform better in improving or above-trend environments,
+- defensive assets such as bonds and gold tend to be relatively stronger in weaker macro regimes.
+
+Although the analysis is not based on real-time vintage data and should therefore be interpreted with caution, it provides useful evidence that business cycle phases identified through the OECD CLI may serve as a practical input for regime-aware asset allocation.
+
+---
 ## Project overview
 
 This project examines whether major asset classes behave differently across business cycle phases identified using the OECD Composite Leading Indicator (CLI) for the United States. The main idea is that macroeconomic conditions shape earnings expectations, interest rates, inflation dynamics, risk appetite, and therefore cross-asset performance. If assets systematically perform differently across macro regimes, business cycle indicators may provide useful signals for tactical asset allocation.
@@ -188,29 +200,6 @@ The transition analysis shows strong phase persistence and economically coherent
 
 ---
 
-## Main empirical results
-
-The cross-asset results are broadly consistent with standard business cycle intuition.
-
-The phase-level average returns indicate that:
-
-- **SPY** performs best in **Recovery**, followed by **Expansion**,
-- **VNQ** also performs best in **Recovery**,
-- **DBC** performs best in **Expansion**,
-- **GLD** performs best in **Contraction**,
-- **AGG** remains positive across all phases and is relatively strongest in **Contraction**.
-
-These patterns are economically plausible:
-
-- equities and real estate tend to benefit from improving growth expectations,
-- commodities tend to perform best when growth is above trend and demand is firm,
-- bonds are more resilient in weaker macro regimes,
-- gold behaves as a defensive asset during contractionary conditions.
-
-Overall, the results suggest that the OECD CLI phase framework captures meaningful macro-financial regime differences.
-
----
-
 ## Interpretation for tactical asset allocation
 
 The findings provide a reasonable motivation for using the OECD CLI as an input in tactical asset allocation.
@@ -245,17 +234,7 @@ The project has several important limitations.
 
 ---
 
-## Conclusion
 
-This project shows that a simple phase-classification framework based on the OECD Composite Leading Indicator for the United States can generate economically interpretable differences in cross-asset performance.
-
-The results are broadly consistent with the literature and market intuition:
-- cyclical assets such as equities, real estate, and commodities tend to perform better in improving or above-trend environments,
-- defensive assets such as bonds and gold tend to be relatively stronger in weaker macro regimes.
-
-Although the analysis is not based on real-time vintage data and should therefore be interpreted with caution, it provides useful evidence that business cycle phases identified through the OECD CLI may serve as a practical input for regime-aware asset allocation.
-
----
 
 ## Repository contents
 
