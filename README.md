@@ -1,7 +1,7 @@
 # OECD CLI Business Cycle Phases and Cross-Asset Performance
 ### Author: Robert-Florian Barbu
 
-## Conclusion
+## Main Findings
 
 This project shows that a simple phase-classification framework based on the OECD Composite Leading Indicator for the United States can generate economically interpretable differences in cross-asset performance.
 
